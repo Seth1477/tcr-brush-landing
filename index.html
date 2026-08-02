@@ -894,8 +894,7 @@
       </ul>
     </div>
     <div>
-      <!-- Replace YOUR_FORM_ID below: sign up free at formspree.io, create a form, paste the ID here -->
-      <form class="quote-form" id="quoteForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <form class="quote-form" id="quoteForm" action="/api/contact" method="POST">
         <div class="f-row">
           <div class="f-field">
             <label for="name">Your Name</label>
@@ -1132,10 +1131,11 @@
     submitBtn.disabled = true;
 
     try {
+      const data = Object.fromEntries(new FormData(form).entries());
       const res = await fetch(form.action, {
         method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
       });
       if (res.ok) {
         form.style.display = 'none';
