@@ -3,826 +3,673 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brush Removal Edmonton | Free Quote | TCR Removal</title>
-  <meta name="description" content="Professional brush clearing and land clearing in Edmonton & surrounding areas. Residential, acreage, and commercial. Licensed & insured. Free quotes. Call 780-951-0017.">
+  <title>Brush &amp; Land Clearing Edmonton | Free Quote | TCR Removal</title>
+  <meta name="description" content="Professional brush clearing and land clearing in Edmonton &amp; surrounding areas. Residential, acreage, and commercial. Licensed &amp; insured. Free quotes. Call 780-951-0017.">
   <meta name="robots" content="noindex, nofollow">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="apple-touch-icon" href="/images/favicon-apple.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    /* =============================================
+       TCR Brush & Land Clearing — Ads Landing Page
+       Design tokens mirror the main tcrremoval.com stylesheet.
+       ============================================= */
 
     :root {
-      --bg:           #f4f1ec;
-      --bg-2:         #eae7df;
-      --text:         #141412;
-      --text-muted:   #5c5950;
-      --accent:       #4a8c40;
-      --accent-hover: #3a7230;
-      --dark:         #0f1a0d;
-      --dark-2:       #182d13;
-      --dark-3:       #1e3b18;
-      --off-white:    #f0ede8;
-      --border:       #d5d1c8;
-
-      --font-display: 'Barlow Condensed', Impact, 'Arial Narrow', Arial, sans-serif;
-      --font-body:    'Barlow', system-ui, Arial, sans-serif;
+      --green:    #2e5c28;
+      --green2:   #245021;
+      --green3:   #1a3d18;
+      --accent:   #4a8c40;
+      --accent2:  #3a7831;
+      --mint:     #9dd494;
+      --white:    #ffffff;
+      --offwhite: #f0f0f0;
+      --card-bg:  #f7f7f7;
+      --text:     #1c1c1c;
+      --muted:    #6b7280;
+      --light:    #e2e2e2;
+      --radius:   8px;
+      --max:      1140px;
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg:       #0f1a0d;
-        --bg-2:     #162514;
-        --text:     #f0ede8;
-        --text-muted: #93a88e;
-        --border:   #273d21;
-      }
-    }
-    :root[data-theme="light"] {
-      --bg:       #f4f1ec;
-      --bg-2:     #eae7df;
-      --text:     #141412;
-      --text-muted: #5c5950;
-      --border:   #d5d1c8;
-    }
-    :root[data-theme="dark"] {
-      --bg:       #0f1a0d;
-      --bg-2:     #162514;
-      --text:     #f0ede8;
-      --text-muted: #93a88e;
-      --border:   #273d21;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: var(--font-body);
-      background: var(--bg);
+      font-family: 'Barlow', sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
       color: var(--text);
-      line-height: 1.6;
-      font-size: 16px;
+      background: var(--offwhite);
     }
 
-    /* ─── STICKY TOP BAR ─────────────────────────────────────── */
-    .top-bar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 200;
-      background: var(--dark);
-      height: 52px;
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    h1, h2, h3, h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+    h3 { font-size: 1.35rem; }
+
+    p { margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    .section { padding: 80px 0; background: var(--white); }
+    .section--light { background: var(--offwhite); }
+    .section--dark { background: var(--green3); color: var(--white); }
+
+    .section__label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(74,140,64,.12);
+      border: 1px solid rgba(74,140,64,.25);
+      padding: 5px 14px;
+      border-radius: 40px;
+      margin-bottom: 14px;
+    }
+
+    .section__heading { margin-bottom: 16px; }
+    .section__heading em { font-style: normal; color: var(--accent); }
+    .section__sub { color: var(--muted); max-width: 620px; }
+
+    .text-center { text-align: center; }
+    .text-center .section__sub { margin: 0 auto; }
+
+    /* ---- BUTTONS ---- */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: var(--radius);
+      font-family: 'Barlow', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: background .15s, color .15s, border-color .15s, transform .15s, box-shadow .15s;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn svg { flex-shrink: 0; }
+
+    .btn--accent {
+      background: var(--accent);
+      color: var(--white);
+      border-color: var(--accent);
+    }
+    .btn--accent:hover {
+      background: var(--accent2);
+      border-color: var(--accent2);
+      box-shadow: 0 6px 20px rgba(74,140,64,.4);
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,.5);
+    }
+    .btn--outline:hover { background: rgba(255,255,255,.1); border-color: var(--white); }
+
+    .btn--white {
+      background: var(--white);
+      color: var(--green);
+      border-color: var(--white);
+    }
+    .btn--white:hover { background: var(--offwhite); box-shadow: 0 6px 20px rgba(0,0,0,.15); }
+
+    .btn--lg { padding: 17px 38px; font-size: 17px; }
+
+    /* ---- HEADER (no nav links off-page: this is an ads landing page) ---- */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--green3);
+      box-shadow: 0 2px 12px rgba(0,0,0,.25);
+    }
+
+    .header__inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 28px;
-      border-bottom: 2px solid var(--accent);
-    }
-
-    .top-bar-brand {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: 1.1rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--off-white);
-      text-decoration: none;
-    }
-    .top-bar-brand span { color: var(--accent); }
-
-    .top-bar-right {
-      display: flex;
-      align-items: center;
       gap: 16px;
     }
 
-    .top-bar-phone {
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--off-white);
-      text-decoration: none;
-      letter-spacing: 0.01em;
-    }
-    .top-bar-phone:hover { color: var(--accent); }
+    .header__logo img { height: 48px; width: auto; }
 
-    .top-bar-cta {
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 7px 16px;
-      transition: background 0.15s;
-    }
-    .top-bar-cta:hover { background: var(--accent-hover); }
+    .header__right { display: flex; align-items: center; gap: 12px; }
 
-    @media (max-width: 580px) {
-      .top-bar { padding: 0 16px; }
-      .top-bar-cta { display: none; }
-      .top-bar-phone { font-size: 0.88rem; }
-    }
-
-    /* ─── HERO ───────────────────────────────────────────────── */
-    .hero {
-      margin-top: 52px;
-      min-height: 92vh;
+    .header__phone {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 28px 60px;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      white-space: nowrap;
+      padding: 8px 16px;
+      border: 2px solid rgba(255,255,255,.3);
+      border-radius: var(--radius);
+      transition: border-color .15s, background .15s;
+    }
+    .header__phone:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+
+    @media (max-width: 640px) {
+      .header__inner { height: 62px; padding: 0 16px; }
+      .header__logo img { height: 38px; }
+      .header__cta { display: none; }
+      .header__phone { padding: 8px 12px; font-size: 14px; }
+    }
+
+    /* ---- HERO (form sits above the fold on desktop) ---- */
+
+    .hero {
+      background: var(--green3);
+      color: var(--white);
+      padding: 64px 0 72px;
       position: relative;
       overflow: hidden;
-      background:
-        radial-gradient(ellipse at 15% 65%, rgba(74,140,64,0.18) 0%, transparent 52%),
-        radial-gradient(ellipse at 82% 18%, rgba(30,59,24,0.5) 0%, transparent 45%),
-        linear-gradient(158deg, #0c1509 0%, #1a3316 52%, #0e1c0b 100%);
     }
 
-    /* grain overlay */
-    .hero::after {
+    .hero::before {
       content: '';
       position: absolute;
       inset: 0;
+      background: radial-gradient(ellipse at 75% 40%, rgba(74,140,64,.22) 0%, transparent 70%);
       pointer-events: none;
-      opacity: 0.06;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
-    .hero-inner {
-      max-width: 980px;
+    .hero__inner {
+      max-width: var(--max);
       margin: 0 auto;
-      width: 100%;
+      padding: 0 24px;
       position: relative;
       z-index: 1;
-    }
-
-    .eyebrow {
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: clamp(62px, 10.5vw, 118px);
-      line-height: 0.9;
-      letter-spacing: -0.01em;
-      text-transform: uppercase;
-      color: var(--off-white);
-      text-wrap: balance;
-      margin-bottom: 28px;
-    }
-
-    .hero h1 em {
-      font-style: normal;
-      color: var(--accent);
-    }
-
-    .hero-sub {
-      font-size: 1.1rem;
-      color: rgba(240,237,232,0.7);
-      max-width: 500px;
-      line-height: 1.65;
-      margin-bottom: 40px;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 52px;
-      align-items: center;
-    }
-
-    .btn-call {
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.1rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 16px 32px;
-      display: inline-block;
-      transition: background 0.15s, transform 0.1s;
-    }
-    .btn-call:hover { background: var(--accent-hover); transform: translateY(-1px); }
-
-    .btn-ghost {
-      border: 2px solid rgba(240,237,232,0.3);
-      color: rgba(240,237,232,0.85);
-      text-decoration: none;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.05rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: 14px 28px;
-      display: inline-block;
-      transition: border-color 0.15s, color 0.15s;
-    }
-    .btn-ghost:hover { border-color: rgba(240,237,232,0.65); color: var(--off-white); }
-
-    .trust-pills {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .trust-pill {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.83rem;
-      font-weight: 600;
-      color: rgba(240,237,232,0.6);
-      letter-spacing: 0.03em;
-    }
-
-    .trust-pill::before {
-      content: '';
-      width: 16px;
-      height: 16px;
-      background: var(--accent);
-      flex-shrink: 0;
-      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-    }
-
-    @media (max-width: 580px) {
-      .hero { min-height: 88vh; padding: 56px 20px 48px; }
-      .hero-ctas { flex-direction: column; align-items: flex-start; }
-      .btn-call, .btn-ghost { width: 100%; text-align: center; }
-      .trust-pills { gap: 14px; }
-    }
-
-    /* ─── TRUST BAR ──────────────────────────────────────────── */
-    .trust-bar {
-      background: var(--dark-2);
-      border-bottom: 1px solid rgba(74,140,64,0.18);
-      padding: 18px 28px;
-    }
-
-    .trust-bar-inner {
-      max-width: 980px;
-      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .tbar-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: rgba(240,237,232,0.8);
-    }
-
-    .tbar-icon {
-      width: 30px;
-      height: 30px;
-      background: rgba(74,140,64,0.2);
-      border: 1px solid rgba(74,140,64,0.35);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 13px;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .tbar-text {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      line-height: 1.3;
-    }
-
-    @media (max-width: 680px) {
-      .trust-bar-inner { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    /* ─── SHARED SECTION STYLES ──────────────────────────────── */
-    .section {
-      padding: 80px 28px;
-    }
-
-    .section-inner {
-      max-width: 980px;
-      margin: 0 auto;
-    }
-
-    .section-eyebrow {
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-
-    .section-heading {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(2rem, 4.5vw, 2.9rem);
-      line-height: 1.02;
-      text-transform: uppercase;
-      color: var(--text);
-      text-wrap: balance;
-      margin-bottom: 14px;
-    }
-
-    .section-heading em {
-      font-style: normal;
-      color: var(--accent);
-    }
-
-    .section-lead {
-      font-size: 1rem;
-      color: var(--text-muted);
-      max-width: 540px;
-      margin-bottom: 44px;
-      line-height: 1.65;
-    }
-
-    /* ─── QUOTE FORM ─────────────────────────────────────────── */
-    .form-section {
-      background: var(--dark);
-      padding: 80px 28px;
-    }
-
-    .form-grid {
-      max-width: 980px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
+      grid-template-columns: 1fr 440px;
+      gap: 30px 56px;
       align-items: start;
     }
 
-    .form-left .section-eyebrow { color: var(--accent); }
-    .form-left .section-heading { color: var(--off-white); margin-bottom: 14px; }
-    .form-left .section-lead { color: rgba(240,237,232,0.6); margin-bottom: 28px; }
-
-    .form-points {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--mint);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      padding: 6px 16px;
+      border-radius: 40px;
+      margin-bottom: 20px;
     }
 
-    .form-points li {
+    .hero h1 { margin-bottom: 18px; }
+    .hero h1 em { font-style: normal; color: var(--mint); }
+
+    .hero__sub {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,.8);
+      max-width: 520px;
+      margin-bottom: 30px;
+    }
+
+    .hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 34px; }
+
+    .hero__badges {
+      grid-column: 1;
       display: flex;
-      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 14px 26px;
+      padding-top: 26px;
+      border-top: 1px solid rgba(255,255,255,.12);
+    }
+
+    .hero__badge-item {
+      display: flex;
+      align-items: center;
       gap: 10px;
-      font-size: 0.88rem;
-      color: rgba(240,237,232,0.72);
-      line-height: 1.5;
-    }
-
-    .form-points li::before {
-      content: '';
-      width: 14px;
-      height: 14px;
-      background: var(--accent);
-      flex-shrink: 0;
-      margin-top: 4px;
-      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-    }
-
-    .quote-form {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(74,140,64,0.22);
-      padding: 36px 32px;
-    }
-
-    .f-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .f-field {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      margin-bottom: 14px;
-    }
-
-    .f-field label {
-      font-size: 0.7rem;
+      font-size: 14px;
       font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(240,237,232,0.5);
+      color: rgba(255,255,255,.85);
+    }
+    .hero__badge-item svg { flex-shrink: 0; color: var(--mint); }
+
+    /* ---- QUOTE FORM CARD ---- */
+
+    .quote-card {
+      /* Span both rows so the trust badges tuck straight under the hero copy
+         instead of being pushed down by the form's height. */
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 24px 60px rgba(0,0,0,.35);
+      overflow: hidden;
+      color: var(--text);
     }
 
-    .f-field input,
-    .f-field textarea,
-    .f-field select {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(240,237,232,0.12);
-      color: var(--off-white);
-      padding: 11px 13px;
-      font-family: var(--font-body);
-      font-size: 0.93rem;
-      outline: none;
-      width: 100%;
-      transition: border-color 0.15s;
-      -webkit-appearance: none;
-      appearance: none;
-    }
-
-    .f-field input::placeholder,
-    .f-field textarea::placeholder { color: rgba(240,237,232,0.25); }
-
-    .f-field input:focus,
-    .f-field textarea:focus,
-    .f-field select:focus { border-color: var(--accent); }
-
-    .f-field textarea { resize: vertical; min-height: 96px; }
-
-    .f-field select { cursor: pointer; }
-    .f-field select option { background: #1a3316; color: var(--off-white); }
-
-    .form-submit {
-      width: 100%;
+    .quote-card__head {
       background: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 15px;
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.15s;
-      margin-top: 4px;
+      color: var(--white);
+      padding: 20px 28px;
     }
-    .form-submit:hover { background: var(--accent-hover); }
-    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .quote-card__head h2 {
+      font-size: 1.6rem;
+      margin-bottom: 2px;
+      color: var(--white);
+    }
+    .quote-card__head p {
+      font-size: 14px;
+      color: rgba(255,255,255,.9);
+      margin: 0;
+    }
+
+    .quote-card__body { padding: 24px 28px 28px; }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+
+    .form-group label {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .form-group .opt { font-weight: 500; text-transform: none; letter-spacing: 0; }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: 'Barlow', sans-serif;
+      font-size: 16px; /* 16px avoids iOS zoom-on-focus */
+      color: var(--text);
+      background: var(--white);
+      border: 1px solid var(--light);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      width: 100%;
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(74,140,64,.15);
+    }
+    .form-group textarea { resize: vertical; min-height: 84px; }
+    .form-group select { cursor: pointer; }
+
+    .form-submit { width: 100%; margin-top: 4px; }
 
     .form-foot {
-      font-size: 0.73rem;
-      color: rgba(240,237,232,0.35);
-      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
       text-align: center;
+      margin-top: 12px;
     }
-    .form-foot a { color: rgba(240,237,232,0.45); text-decoration: none; }
-    .form-foot a:hover { color: var(--accent); }
+    .form-foot a { color: var(--green); font-weight: 700; }
 
-    .form-success {
-      text-align: center;
-      padding: 48px 20px;
-      display: none;
-    }
+    .form-success { display: none; padding: 44px 28px; text-align: center; }
+    .form-success h3 { color: var(--green); margin-bottom: 8px; font-size: 1.7rem; }
+    .form-success p { color: var(--muted); font-size: 15px; }
+    .form-success a { color: var(--green); font-weight: 700; }
 
-    .form-success h3 {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.9rem;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-
-    .form-success p { color: rgba(240,237,232,0.65); font-size: 0.95rem; }
-    .form-success a { color: var(--accent); text-decoration: none; }
-
-    @media (max-width: 760px) {
-      .form-grid { grid-template-columns: 1fr; gap: 40px; }
-      .f-row { grid-template-columns: 1fr; }
-      .quote-form { padding: 24px 20px; }
+    /* honeypot — hidden from humans, catches bots */
+    .hp-field {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
     }
 
-    /* ─── SERVICES ───────────────────────────────────────────── */
-    .services-grid {
+    @media (max-width: 980px) {
+      /* Single column: headline → form → trust badges, so the form stays
+         as close to the fold as possible on phones. */
+      .hero__inner { grid-template-columns: 1fr; gap: 28px; }
+      .hero { padding: 40px 0 48px; }
+      .hero__content { order: 1; }
+      .quote-card { order: 2; grid-column: auto; grid-row: auto; max-width: 560px; }
+      .hero__badges { order: 3; grid-column: auto; }
+      .hero__sub { max-width: none; }
+    }
+
+    @media (max-width: 640px) {
+      /* Trim everything competing with the form for the first screen. */
+      .hero h1 { font-size: clamp(1.9rem, 8.5vw, 2.5rem); margin-bottom: 12px; }
+      .hero__badge { margin-bottom: 14px; }
+      .hero__sub { font-size: 1rem; margin-bottom: 22px; }
+      .hero__ctas { gap: 10px; margin-bottom: 0; }
+      .hero__ctas .btn { width: 100%; }
+      .hero__secondary { display: none; }
+      .quote-card__body { padding: 20px 20px 24px; }
+      .quote-card__head { padding: 18px 20px; }
+    }
+
+    /* ---- TRUST BAR ---- */
+
+    .trust-bar { background: var(--green); padding: 20px 0; }
+
+    .trust-bar__inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px 32px;
+    }
+
+    .trust-bar__item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: .03em;
+    }
+    .trust-bar__item svg { flex-shrink: 0; color: var(--mint); }
+
+    /* ---- BEFORE / AFTER PROOF ---- */
+
+    .ba-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 44px;
+    }
+
+    .ba-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--card-bg);
+      border: 1px solid var(--light);
+      box-shadow: 0 4px 20px rgba(0,0,0,.08);
+    }
+
+    .ba-item img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+
+    .ba-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      border-radius: 40px;
+      color: var(--white);
+      backdrop-filter: blur(4px);
+    }
+    .ba-tag--before { background: rgba(0,0,0,.6); }
+    .ba-tag--after  { background: rgba(46,92,40,.9); }
+
+    .ba-caption {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .ba-caption strong { color: var(--text); font-weight: 700; }
+
+    @media (max-width: 700px) {
+      .ba-grid { grid-template-columns: 1fr; gap: 16px; }
+    }
+
+    /* ---- SERVICE CARDS ---- */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 28px;
+      margin-top: 44px;
     }
 
     .service-card {
-      background: var(--bg-2);
-      border: 1px solid var(--border);
-      padding: 36px 30px;
+      background: var(--white);
+      border: 1px solid var(--light);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      transition: transform .2s, box-shadow .2s;
     }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 10px 32px rgba(0,0,0,.1); }
 
-    .service-card h3 {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.45rem;
-      text-transform: uppercase;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
+    .service-card h3 { margin-bottom: 10px; }
+    .service-card > p { font-size: 15px; color: var(--muted); margin-bottom: 18px; }
 
-    .service-card > p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 18px;
-      line-height: 1.6;
-    }
-
-    .svc-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
+    .svc-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
     .svc-list li {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      padding-left: 16px;
+      font-size: 15px;
+      color: var(--muted);
+      padding-left: 18px;
       position: relative;
     }
-
     .svc-list li::before {
-      content: '—';
+      content: '';
       position: absolute;
       left: 0;
-      color: var(--accent);
-      font-weight: 700;
+      top: 10px;
+      width: 7px;
+      height: 7px;
+      border-radius: 2px;
+      background: var(--accent);
     }
 
-    @media (max-width: 580px) {
+    @media (max-width: 700px) {
       .services-grid { grid-template-columns: 1fr; }
-      .service-card { padding: 24px 20px; }
+      .svc-list { grid-template-columns: 1fr 1fr; }
     }
 
-    /* ─── PROCESS ────────────────────────────────────────────── */
-    .process-section {
-      background: var(--bg-2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
+    /* ---- PROCESS STEPS ---- */
 
-    .process-steps {
+    .steps {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      border: 1px solid var(--border);
+      gap: 24px;
       margin-top: 44px;
     }
 
-    .process-step {
-      padding: 30px 22px;
-      border-right: 1px solid var(--border);
+    .step {
+      background: var(--white);
+      border: 1px solid var(--light);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      transition: transform .2s, box-shadow .2s;
     }
-    .process-step:last-child { border-right: none; }
+    .step:hover { transform: translateY(-4px); box-shadow: 0 10px 32px rgba(0,0,0,.1); }
 
-    .step-num {
-      font-family: var(--font-display);
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: rgba(74,140,64,0.22);
-      line-height: 1;
-      margin-bottom: 10px;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .step-title {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.05rem;
-      text-transform: uppercase;
-      color: var(--text);
-      margin-bottom: 7px;
-    }
-
-    .step-desc {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      line-height: 1.55;
+    .step__num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(74,140,64,.12);
+      color: var(--green);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
     }
 
-    @media (max-width: 680px) {
-      .process-steps { grid-template-columns: 1fr 1fr; }
-      .process-step { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-      .process-step:nth-child(2n) { border-right: none; }
-      .process-step:nth-last-child(-n+2) { border-bottom: none; }
-    }
+    .step__title { font-size: 1.1rem; margin-bottom: 8px; }
+    .step__text { font-size: 14px; color: var(--muted); }
 
-    @media (max-width: 380px) {
-      .process-steps { grid-template-columns: 1fr; }
-      .process-step { border-right: none; }
-      .process-step:last-child { border-bottom: none; }
-    }
+    @media (max-width: 900px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
 
-    /* ─── SERVICE AREAS ──────────────────────────────────────── */
+    /* ---- SERVICE AREAS ---- */
+
     .areas-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      margin-top: 44px;
+      gap: 12px;
+      margin-top: 40px;
     }
 
     .area-item {
-      background: var(--bg);
-      padding: 18px 18px;
-      font-size: 0.88rem;
+      background: var(--white);
+      border: 1px solid var(--light);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      font-size: 15px;
       font-weight: 600;
-      color: var(--text-muted);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .area-item svg { flex-shrink: 0; color: var(--accent); }
+
+    @media (max-width: 800px) { .areas-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 560px) { .areas-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ---- FAQ ---- */
+
+    .faq-list { max-width: 800px; margin: 44px auto 0; }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--light);
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      overflow: hidden;
     }
 
-    @media (max-width: 580px) {
-      .areas-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    /* ─── FAQ ────────────────────────────────────────────────── */
-    .faq-list {
-      margin-top: 44px;
-      border-top: 1px solid var(--border);
-    }
-
-    .faq-item { border-bottom: 1px solid var(--border); }
-
-    .faq-q {
+    .faq-question {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 18px 0;
-      cursor: pointer;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      color: var(--text);
-      background: none;
-      border: none;
       width: 100%;
       text-align: left;
-      transition: color 0.12s;
+      padding: 18px 22px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text);
+      transition: background .15s, color .15s;
     }
-    .faq-q:hover { color: var(--accent); }
+    .faq-question:hover { background: var(--offwhite); }
+    .faq-question.active { background: rgba(46,92,40,.05); color: var(--green); }
 
-    .faq-icon {
-      width: 22px;
-      height: 22px;
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 15px;
-      font-weight: 400;
-      color: var(--accent);
-      transition: background 0.12s, border-color 0.12s;
-    }
-
-    .faq-item.open .faq-icon {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
-
-    .faq-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-
-    .faq-item.open .faq-body { max-height: 260px; }
+    .faq-icon { flex-shrink: 0; transition: transform .2s; color: var(--accent); }
+    .faq-question.active .faq-icon { transform: rotate(180deg); }
 
     .faq-answer {
-      padding: 0 0 18px;
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      line-height: 1.65;
-      max-width: 640px;
+      display: none;
+      padding: 0 22px 20px;
+      font-size: 15px;
+      color: var(--muted);
     }
+    .faq-answer.open { display: block; }
 
-    /* ─── FINAL CTA ──────────────────────────────────────────── */
-    .final-cta {
-      background: var(--dark-3);
-      border-top: 3px solid var(--accent);
-      padding: 80px 28px;
+    /* ---- CTA BAND ---- */
+
+    .cta-band {
+      background: var(--green);
+      color: var(--white);
+      padding: 76px 0;
       text-align: center;
     }
+    .cta-band h2 { margin-bottom: 14px; }
+    .cta-band p { color: rgba(255,255,255,.85); max-width: 520px; margin: 0 auto 32px; }
 
-    .final-cta .section-heading {
-      color: var(--off-white);
-      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
-      margin-bottom: 14px;
-    }
-
-    .final-cta-sub {
-      color: rgba(240,237,232,0.58);
-      font-size: 1rem;
-      max-width: 480px;
-      margin: 0 auto 40px;
-      line-height: 1.6;
-    }
-
-    .final-btns {
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-big {
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: 1.35rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 20px 40px;
-      display: inline-block;
-      transition: background 0.15s, transform 0.1s;
-    }
-    .btn-big:hover { background: var(--accent-hover); transform: translateY(-2px); }
-
-    .btn-outline-light {
-      border: 2px solid rgba(240,237,232,0.3);
-      color: rgba(240,237,232,0.85);
-      text-decoration: none;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: 18px 32px;
-      display: inline-block;
-      transition: border-color 0.15s, color 0.15s;
-    }
-    .btn-outline-light:hover { border-color: rgba(240,237,232,0.65); color: var(--off-white); }
+    .cta-band__btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
     @media (max-width: 500px) {
-      .final-btns { flex-direction: column; align-items: center; }
-      .btn-big, .btn-outline-light { width: 100%; text-align: center; }
+      .cta-band__btns { flex-direction: column; }
+      .cta-band__btns .btn { width: 100%; }
     }
 
-    /* ─── FOOTER ─────────────────────────────────────────────── */
+    /* ---- FOOTER ---- */
+
     .footer {
-      background: var(--dark);
-      border-top: 1px solid rgba(74,140,64,0.12);
-      padding: 22px 28px;
+      background: var(--green3);
+      color: rgba(255,255,255,.6);
+      padding: 26px 0;
       text-align: center;
-      font-size: 0.78rem;
-      color: rgba(240,237,232,0.38);
+      font-size: 14px;
     }
-    .footer a { color: rgba(240,237,232,0.38); text-decoration: none; }
-    .footer a:hover { color: var(--accent); }
+    .footer a { color: rgba(255,255,255,.8); font-weight: 600; }
+    .footer a:hover { color: var(--white); }
+    .footer__sep { opacity: .4; margin: 0 10px; }
 
-    /* ─── MOBILE STICKY BOTTOM BAR ───────────────────────────── */
-    .mobile-cta-bar {
+    /* ---- MOBILE STICKY CTA BAR ---- */
+
+    .mobile-cta {
       display: none;
       position: fixed;
       bottom: 0; left: 0; right: 0;
-      z-index: 200;
-      background: var(--accent);
+      z-index: 150;
+      background: var(--green3);
+      border-top: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 -4px 20px rgba(0,0,0,.25);
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+      gap: 10px;
+    }
+    .mobile-cta .btn { flex: 1; padding: 14px 10px; font-size: 15px; }
+
+    @media (max-width: 900px) {
+      .mobile-cta { display: flex; }
+      body { padding-bottom: 76px; }
     }
 
-    .mobile-cta-bar a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      color: #fff;
-      text-decoration: none;
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1rem;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      padding: 15px;
-    }
+    /* ---- A11Y / MOTION ---- */
 
-    @media (max-width: 580px) {
-      .mobile-cta-bar { display: block; }
-      body { padding-bottom: 54px; }
-    }
-
-    /* ─── FOCUS & MOTION ─────────────────────────────────────── */
-    a:focus-visible, button:focus-visible {
+    a:focus-visible, button:focus-visible, input:focus-visible,
+    select:focus-visible, textarea:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 3px;
     }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
       }
       html { scroll-behavior: auto; }
     }
@@ -830,120 +677,166 @@
 </head>
 <body>
 
-<!-- ── STICKY TOP BAR ────────────────────────────────────────── -->
-<header class="top-bar">
-  <a href="tel:+17809510017" class="top-bar-brand">TCR <span>Removal</span></a>
-  <div class="top-bar-right">
-    <a href="tel:+17809510017" class="top-bar-phone">780-951-0017</a>
-    <a href="#quote" class="top-bar-cta">Free Quote</a>
+<!-- ── HEADER ─────────────────────────────────────────────────── -->
+<header class="site-header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <img src="/images/logo.png" alt="TCR Brush and Concrete Removal" width="160" height="48">
+    </div>
+    <div class="header__right">
+      <a href="tel:+17809510017" class="header__phone" data-cta="header-call">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        780-951-0017
+      </a>
+      <a href="#quote" class="btn btn--accent header__cta">Free Quote</a>
+    </div>
   </div>
 </header>
 
-<!-- ── HERO ─────────────────────────────────────────────────── -->
-<section class="hero" aria-label="Hero">
-  <div class="hero-inner">
-    <p class="eyebrow">Edmonton &amp; Surrounding Areas</p>
-    <h1>Brush &amp;<br><em>Land Clearing</em><br>That Gets Done.</h1>
-    <p class="hero-sub">Overgrown lots, dense bush, unwanted shrubs, fallen trees — TCR clears it fast and hauls everything away. Residential, acreage, and commercial.</p>
-    <div class="hero-ctas">
-      <a href="tel:+17809510017" class="btn-call">Call 780-951-0017</a>
-      <a href="#quote" class="btn-ghost">Get a Free Quote</a>
+<!-- ── HERO + ABOVE-THE-FOLD QUOTE FORM ───────────────────────── -->
+<section class="hero">
+  <div class="hero__inner">
+
+    <div class="hero__content">
+      <span class="hero__badge">Edmonton &amp; Surrounding Areas</span>
+      <h1>Brush &amp; Land Clearing<br><em>That Actually Gets Done</em></h1>
+      <p class="hero__sub">Overgrown lots, dense bush, unwanted shrubs, fallen trees — we clear it and haul every last bit away. Residential, acreage, and commercial.</p>
+
+      <div class="hero__ctas">
+        <a href="tel:+17809510017" class="btn btn--accent btn--lg" data-cta="hero-call">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call 780-951-0017
+        </a>
+        <a href="#proof" class="btn btn--outline btn--lg hero__secondary">See Our Work</a>
+      </div>
     </div>
-    <div class="trust-pills">
-      <span class="trust-pill">Licensed &amp; Insured</span>
-      <span class="trust-pill">Free On-Site Quotes</span>
-      <span class="trust-pill">Full Debris Removal</span>
+
+    <!-- Quote form is deliberately above the fold: it is the primary conversion path -->
+    <div class="quote-card" id="quote">
+      <div class="quote-card__head">
+        <h2>Get Your Free Quote</h2>
+        <p>Takes 30 seconds. We reply same day, Mon–Fri.</p>
+      </div>
+      <div class="quote-card__body">
+        <form id="quoteForm" action="/api/contact" method="POST" novalidate>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" placeholder="John Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="780-000-0000" required>
+          </div>
+          <div class="form-group">
+            <label for="property">Property Type <span class="opt">(optional)</span></label>
+            <select id="property" name="property">
+              <option value="">Select one…</option>
+              <option>Residential yard or lot</option>
+              <option>Acreage</option>
+              <option>Commercial / development site</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">What Needs Clearing? <span class="opt">(optional)</span></label>
+            <textarea id="message" name="message" placeholder="Rough size of the area, type of growth, anything else useful…"></textarea>
+          </div>
+
+          <!-- honeypot -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button type="submit" class="btn btn--accent form-submit" data-cta="form-submit">Get My Free Quote</button>
+          <p class="form-foot">Prefer to talk? Call <a href="tel:+17809510017" data-cta="form-call">780-951-0017</a></p>
+        </form>
+
+        <div class="form-success" id="formSuccess" role="status">
+          <h3>Request Sent!</h3>
+          <p>Thanks — we'll get back to you shortly with a quote.<br>
+             Need it sooner? Call <a href="tel:+17809510017">780-951-0017</a></p>
+        </div>
+      </div>
     </div>
+
+    <div class="hero__badges">
+      <span class="hero__badge-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Licensed &amp; Insured
+      </span>
+      <span class="hero__badge-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Free On-Site Quotes
+      </span>
+      <span class="hero__badge-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        All Debris Hauled Away
+      </span>
+    </div>
+
   </div>
 </section>
 
-<!-- ── TRUST BAR ─────────────────────────────────────────────── -->
+<!-- ── TRUST BAR ──────────────────────────────────────────────── -->
 <div class="trust-bar">
-  <div class="trust-bar-inner">
-    <div class="tbar-item">
-      <div class="tbar-icon">✓</div>
-      <span class="tbar-text">Residential &amp; Commercial</span>
-    </div>
-    <div class="tbar-item">
-      <div class="tbar-icon">✓</div>
-      <span class="tbar-text">Licensed &amp; Insured</span>
-    </div>
-    <div class="tbar-item">
-      <div class="tbar-icon">✓</div>
-      <span class="tbar-text">No Mess Left Behind</span>
-    </div>
-    <div class="tbar-item">
-      <div class="tbar-icon">$</div>
-      <span class="tbar-text">Free Quotes</span>
-    </div>
+  <div class="trust-bar__inner">
+    <span class="trust-bar__item">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+      Residential &amp; Commercial
+    </span>
+    <span class="trust-bar__item">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+      Licensed &amp; Insured
+    </span>
+    <span class="trust-bar__item">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+      No Mess Left Behind
+    </span>
+    <span class="trust-bar__item">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+      Free Quotes
+    </span>
+    <span class="trust-bar__item">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+      Same-Day Response
+    </span>
   </div>
 </div>
 
-<!-- ── QUOTE FORM ─────────────────────────────────────────────── -->
-<section class="form-section" id="quote" aria-label="Get a free quote">
-  <div class="form-grid">
-    <div class="form-left">
-      <p class="section-eyebrow">Free Estimate</p>
-      <h2 class="section-heading">Get Your<br><em>Free Quote</em></h2>
-      <p class="section-lead">Send us a quick message and we'll get back to you with a firm price. No runaround.</p>
-      <ul class="form-points">
-        <li>No-obligation assessment — describe your site or send photos</li>
-        <li>We respond same day, Mon–Fri 7am–6pm</li>
-        <li>Serving Edmonton, Sherwood Park, St. Albert, Spruce Grove &amp; more</li>
-        <li>Residential lots, acreages, and commercial sites all welcome</li>
-      </ul>
+<!-- ── BEFORE / AFTER PROOF ───────────────────────────────────── -->
+<section class="section" id="proof">
+  <div class="container text-center">
+    <span class="section__label">Real Results</span>
+    <h2 class="section__heading">Overgrown Yard.<br><em>Cleared To The Dirt.</em></h2>
+    <p class="section__sub">This is a real Edmonton-area property we cleared — wall-to-wall brush, shrubs, and waist-high growth taken right down to clean, usable ground.</p>
+
+    <div class="ba-grid">
+      <figure class="ba-item">
+        <span class="ba-tag ba-tag--before">Before</span>
+        <img src="/images/brush-before.jpg" alt="Overgrown Edmonton backyard filled with dense brush, shrubs and waist-high grass before clearing" width="1153" height="769" loading="lazy" decoding="async">
+      </figure>
+      <figure class="ba-item">
+        <span class="ba-tag ba-tag--after">After</span>
+        <img src="/images/brush-after.jpg" alt="The same Edmonton backyard cleared down to open, usable ground with all brush and debris hauled away" width="1600" height="1067" loading="lazy" decoding="async">
+      </figure>
     </div>
-    <div>
-      <form class="quote-form" id="quoteForm" action="/api/contact" method="POST">
-        <div class="f-row">
-          <div class="f-field">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="John Smith" required>
-          </div>
-          <div class="f-field">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="780-000-0000" required>
-          </div>
-        </div>
-        <div class="f-field">
-          <label for="email">Email (optional)</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com">
-        </div>
-        <div class="f-field">
-          <label for="property">Type of Property</label>
-          <select id="property" name="property">
-            <option value="">Select one...</option>
-            <option>Residential yard or lot</option>
-            <option>Acreage</option>
-            <option>Commercial / development site</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="f-field">
-          <label for="message">What needs clearing?</label>
-          <textarea id="message" name="message" placeholder="Describe your site — size, type of brush, what you need done..." required></textarea>
-        </div>
-        <button type="submit" class="form-submit">Send My Quote Request</button>
-        <p class="form-foot">Or call us directly: <a href="tel:+17809510017">780-951-0017</a></p>
-      </form>
-      <div class="form-success" id="formSuccess">
-        <h3>Quote Request Sent!</h3>
-        <p>We'll be in touch within a few hours.<br>Or call now: <a href="tel:+17809510017">780-951-0017</a></p>
-      </div>
-    </div>
+
+    <p class="ba-caption"><strong>Same yard, same fence line.</strong> Brush cut, cleared, and every bit of debris hauled off site.</p>
   </div>
 </section>
 
 <!-- ── SERVICES ───────────────────────────────────────────────── -->
-<section class="section" aria-label="Services">
-  <div class="section-inner">
-    <p class="section-eyebrow">What We Clear</p>
-    <h2 class="section-heading">From <em>Backyards</em><br>to Acreages</h2>
-    <p class="section-lead">Whether it's a small residential lot or a large commercial property, we have the equipment to handle it.</p>
+<section class="section section--light">
+  <div class="container">
+    <span class="section__label">What We Clear</span>
+    <h2 class="section__heading">From <em>Backyards</em> to Acreages</h2>
+    <p class="section__sub">Small residential lot or large commercial property — we bring the right equipment for the job.</p>
+
     <div class="services-grid">
       <div class="service-card">
         <h3>Residential Clearing</h3>
-        <p>Reclaim your yard, prepare your lot for construction, or clear out years of overgrowth. We handle everything.</p>
+        <p>Reclaim your yard, prep your lot for construction, or clear out years of overgrowth.</p>
         <ul class="svc-list">
           <li>Overgrown backyards</li>
           <li>Shrub &amp; bush removal</li>
@@ -955,7 +848,7 @@
       </div>
       <div class="service-card">
         <h3>Commercial &amp; Acreage</h3>
-        <p>Large-scale land clearing for developers, farmers, and commercial property owners. We bring the right equipment for the job.</p>
+        <p>Large-scale land clearing for developers, farmers, and commercial property owners.</p>
         <ul class="svc-list">
           <li>Acreage clearing</li>
           <li>Development site prep</li>
@@ -970,164 +863,186 @@
 </section>
 
 <!-- ── PROCESS ────────────────────────────────────────────────── -->
-<section class="section process-section" aria-label="Our process">
-  <div class="section-inner">
-    <p class="section-eyebrow">Our Process</p>
-    <h2 class="section-heading">How It <em>Works</em></h2>
-    <div class="process-steps">
-      <div class="process-step">
-        <div class="step-num">01</div>
-        <div class="step-title">Free Quote</div>
-        <div class="step-desc">Describe your site or send photos. We'll give you a straight price with no obligation.</div>
+<section class="section">
+  <div class="container">
+    <span class="section__label">Our Process</span>
+    <h2 class="section__heading">How It <em>Works</em></h2>
+    <p class="section__sub">Four straightforward steps from first call to clean, usable land.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step__num">1</div>
+        <h3 class="step__title">Free Quote</h3>
+        <p class="step__text">Call or fill in the form. Describe your site or send photos and we'll give you a straight price.</p>
       </div>
-      <div class="process-step">
-        <div class="step-num">02</div>
-        <div class="step-title">On-Site Assessment</div>
-        <div class="step-desc">Our crew evaluates access, growth density, and selects the right equipment for your job.</div>
+      <div class="step">
+        <div class="step__num">2</div>
+        <h3 class="step__title">On-Site Look</h3>
+        <p class="step__text">We check access, growth density, and pick the right equipment for the job.</p>
       </div>
-      <div class="process-step">
-        <div class="step-num">03</div>
-        <div class="step-title">We Clear It</div>
-        <div class="step-desc">Brush, shrubs, trees, and overgrowth are cut, mulched, or removed — efficiently and thoroughly.</div>
+      <div class="step">
+        <div class="step__num">3</div>
+        <h3 class="step__title">We Clear It</h3>
+        <p class="step__text">Brush, shrubs, trees, and overgrowth cut, mulched, or removed — efficiently and thoroughly.</p>
       </div>
-      <div class="process-step">
-        <div class="step-num">04</div>
-        <div class="step-title">Clean Site</div>
-        <div class="step-desc">All debris hauled away. You get clean, usable land ready for whatever comes next.</div>
+      <div class="step">
+        <div class="step__num">4</div>
+        <h3 class="step__title">Clean Site</h3>
+        <p class="step__text">All debris hauled away. You get clean, usable land ready for whatever comes next.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ── SERVICE AREAS ──────────────────────────────────────────── -->
-<section class="section" aria-label="Service areas">
-  <div class="section-inner">
-    <p class="section-eyebrow">Where We Work</p>
-    <h2 class="section-heading">Brush Removal Across<br><em>Greater Edmonton</em></h2>
+<section class="section section--light">
+  <div class="container">
+    <span class="section__label">Where We Work</span>
+    <h2 class="section__heading">Serving <em>Greater Edmonton</em></h2>
+    <p class="section__sub">Not sure if you're in range? Give us a call — we travel.</p>
+
     <div class="areas-grid">
-      <div class="area-item">Edmonton</div>
-      <div class="area-item">Sherwood Park</div>
-      <div class="area-item">St. Albert</div>
-      <div class="area-item">Spruce Grove</div>
-      <div class="area-item">Leduc</div>
-      <div class="area-item">Fort Saskatchewan</div>
-      <div class="area-item">Beaumont</div>
-      <div class="area-item">Stony Plain</div>
-      <div class="area-item">Morinville</div>
-      <div class="area-item">Devon</div>
-      <div class="area-item">Wetaskiwin</div>
-      <div class="area-item">Camrose</div>
+      <div class="area-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Edmonton</div>
+      <div class="area-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Sherwood Park</div>
+      <div class="area-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>St. Albert</div>
+      <div class="area-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Spruce Grove</div>
+      <div class="area-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Leduc</div>
+      <div class="area-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Fort Saskatchewan</div>
+      <div class="area-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Beaumont</div>
+      <div class="area-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Stony Plain</div>
+      <div class="area-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Morinville</div>
+      <div class="area-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Devon</div>
+      <div class="area-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Wetaskiwin</div>
+      <div class="area-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Camrose</div>
     </div>
   </div>
 </section>
 
-<!-- ── FAQ ───────────────────────────────────────────────────── -->
-<section class="section" aria-label="FAQ">
-  <div class="section-inner">
-    <p class="section-eyebrow">FAQ</p>
-    <h2 class="section-heading">Common <em>Questions</em></h2>
+<!-- ── FAQ ────────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container text-center">
+    <span class="section__label">FAQ</span>
+    <h2 class="section__heading">Common <em>Questions</em></h2>
+  </div>
+  <div class="container">
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
+        <button class="faq-question" aria-expanded="false">
           How do I get a quote for brush removal?
-          <span class="faq-icon" aria-hidden="true">+</span>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-body">
-          <p class="faq-answer">Give us a call or send photos of your site. We'll assess the size of the area, density of growth, and any access challenges to give you a fair price.</p>
-        </div>
+        <div class="faq-answer"><p>Give us a call or fill in the form above. Send photos of your site if you have them — we'll assess the size of the area, density of growth, and any access challenges to give you a fair price.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
+        <button class="faq-question" aria-expanded="false">
           Do you remove the brush or just cut it down?
-          <span class="faq-icon" aria-hidden="true">+</span>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-body">
-          <p class="faq-answer">We fully remove and haul away all debris. We don't leave piles of brush behind for you to deal with — the job isn't done until the site is clean.</p>
-        </div>
+        <div class="faq-answer"><p>We fully remove and haul away all debris. We don't leave piles of brush behind for you to deal with — the job isn't done until the site is clean.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          Can you handle large acreages or just small yards?
-          <span class="faq-icon" aria-hidden="true">+</span>
+        <button class="faq-question" aria-expanded="false">
+          Can you handle large acreages, or just small yards?
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-body">
-          <p class="faq-answer">Both. We have equipment suited for small residential lots as well as large-scale acreage and commercial clearing jobs.</p>
-        </div>
+        <div class="faq-answer"><p>Both. We have equipment suited for small residential lots as well as large-scale acreage and commercial clearing jobs.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
+        <button class="faq-question" aria-expanded="false">
           Do you remove stumps as well?
-          <span class="faq-icon" aria-hidden="true">+</span>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-body">
-          <p class="faq-answer">Yes, stump removal can be included depending on the size and number. Let us know what you're working with and we'll factor it into the quote.</p>
-        </div>
+        <div class="faq-answer"><p>Yes — stump removal can be included depending on the size and number. Let us know what you're working with and we'll factor it into the quote.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          What areas do you serve?
-          <span class="faq-icon" aria-hidden="true">+</span>
+        <button class="faq-question" aria-expanded="false">
+          How soon can you start?
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-body">
-          <p class="faq-answer">We serve Edmonton and the greater surrounding area including Sherwood Park, St. Albert, Spruce Grove, Leduc, Fort Saskatchewan, Beaumont, Stony Plain, Morinville, Devon, Wetaskiwin, and Camrose.</p>
-        </div>
+        <div class="faq-answer"><p>It depends on the season and our current schedule, but we respond to every quote request the same day Monday through Friday. Call us and we'll give you a realistic timeline up front.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What areas do you serve?
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><p>Edmonton and the greater surrounding area, including Sherwood Park, St. Albert, Spruce Grove, Leduc, Fort Saskatchewan, Beaumont, Stony Plain, Morinville, Devon, Wetaskiwin, and Camrose.</p></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ── FINAL CTA ──────────────────────────────────────────────── -->
-<section class="final-cta" aria-label="Contact">
-  <div class="section-inner">
-    <p class="section-eyebrow" style="color: var(--accent);">Get Started Today</p>
-    <h2 class="section-heading">Ready to Clear<br><em>That Land?</em></h2>
-    <p class="final-cta-sub">Call today for a free quote. We'll assess your site and give you a firm price and timeline — no runaround.</p>
-    <div class="final-btns">
-      <a href="tel:+17809510017" class="btn-big">Call 780-951-0017</a>
-      <a href="#quote" class="btn-outline-light">Get a Free Quote</a>
+<section class="cta-band">
+  <div class="container">
+    <h2>Ready to Clear That Land?</h2>
+    <p>Call today for a free quote. We'll assess your site and give you a firm price and timeline — no runaround.</p>
+    <div class="cta-band__btns">
+      <a href="tel:+17809510017" class="btn btn--white btn--lg" data-cta="footer-call">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call 780-951-0017
+      </a>
+      <a href="#quote" class="btn btn--outline btn--lg">Request a Free Quote</a>
     </div>
   </div>
 </section>
 
 <!-- ── FOOTER ─────────────────────────────────────────────────── -->
 <footer class="footer">
-  © 2025 TCR Brush and Concrete Removal &nbsp;·&nbsp; Edmonton, AB
-  &nbsp;·&nbsp; <a href="tel:+17809510017">780-951-0017</a>
-  &nbsp;·&nbsp; <a href="mailto:tcrremoval@gmail.com">tcrremoval@gmail.com</a>
+  <div class="container">
+    © 2025 TCR Brush and Concrete Removal
+    <span class="footer__sep">·</span> Edmonton, AB
+    <span class="footer__sep">·</span> <a href="tel:+17809510017">780-951-0017</a>
+    <span class="footer__sep">·</span> <a href="mailto:tcrremoval@gmail.com">tcrremoval@gmail.com</a>
+  </div>
 </footer>
 
-<!-- ── MOBILE STICKY BOTTOM BAR ──────────────────────────────── -->
-<div class="mobile-cta-bar" aria-hidden="true">
-  <a href="tel:+17809510017">Call Now — 780-951-0017</a>
+<!-- ── MOBILE STICKY CTA ──────────────────────────────────────── -->
+<div class="mobile-cta">
+  <a href="tel:+17809510017" class="btn btn--accent" data-cta="sticky-call">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call Now
+  </a>
+  <a href="#quote" class="btn btn--white">Free Quote</a>
 </div>
 
 <script>
-  // FAQ accordion
-  document.querySelectorAll('.faq-q').forEach(btn => {
+  // ---- FAQ accordion ----
+  document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(i => {
-        i.classList.remove('open');
-        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
-        i.querySelector('.faq-icon').textContent = '+';
+      const answer = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('active');
+
+      document.querySelectorAll('.faq-question.active').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
       });
+
       if (!isOpen) {
-        item.classList.add('open');
+        btn.classList.add('active');
         btn.setAttribute('aria-expanded', 'true');
-        btn.querySelector('.faq-icon').textContent = '−';
+        answer.classList.add('open');
       }
     });
   });
 
-  // Quote form — submits to Formspree, shows success state
+  // ---- Quote form ----
   const form = document.getElementById('quoteForm');
   const successBox = document.getElementById('formSuccess');
+  const submitBtn = form.querySelector('.form-submit');
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
-    const submitBtn = form.querySelector('.form-submit');
-    submitBtn.textContent = 'Sending...';
+
+    const name = form.name.value.trim();
+    const phone = form.phone.value.trim();
+    if (!name || !phone) {
+      alert('Please enter your name and phone number so we can get back to you.');
+      return;
+    }
+
+    submitBtn.textContent = 'Sending…';
     submitBtn.disabled = true;
 
     try {
@@ -1137,24 +1052,31 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
-      if (res.ok) {
-        form.style.display = 'none';
-        successBox.style.display = 'block';
-      } else {
-        throw new Error('non-ok response');
+      if (!res.ok) throw new Error('non-ok response');
+
+      form.style.display = 'none';
+      successBox.style.display = 'block';
+
+      // Fires a Google Ads conversion if gtag is present (see conversion tracking note).
+      if (typeof gtag === 'function' && window.TCR_ADS_CONVERSION_ID) {
+        gtag('event', 'conversion', { send_to: window.TCR_ADS_CONVERSION_ID });
       }
     } catch {
-      submitBtn.textContent = 'Send My Quote Request';
+      submitBtn.textContent = 'Get My Free Quote';
       submitBtn.disabled = false;
-      alert('Something went wrong. Please call us at 780-951-0017 or email tcrremoval@gmail.com.');
+      alert('Something went wrong sending your request. Please call us at 780-951-0017 or email tcrremoval@gmail.com.');
     }
   });
 
-  // Smooth scroll for anchor links
+  // ---- Smooth scroll for in-page anchors ----
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
-      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const firstInput = target.querySelector('input');
+      if (firstInput) setTimeout(() => firstInput.focus({ preventScroll: true }), 500);
     });
   });
 </script>
