@@ -1066,17 +1066,48 @@
       form.style.display = 'none';
       successBox.style.display = 'block';
 
-      // Google Ads conversion: "Submit lead form". Fired only after the API
-      // confirms the email actually sent, so it counts real leads rather than
-      // every button press.
+      // Google Ads conversion: "Website Form Submission". Fired only after the
+      // API confirms the email actually sent, so it counts real leads rather
+      // than every button press.
       if (typeof gtag === 'function') {
-        gtag('event', 'ads_conversion_Form_1', {});
+        gtag('event', 'conversion', {
+          send_to: 'AW-18343534670/zeAFCIeAkN4cEM7A8KpE',
+          value: 1.0,
+          currency: 'CAD'
+        });
       }
     } catch {
       submitBtn.textContent = 'Get My Free Quote';
       submitBtn.disabled = false;
       alert('Something went wrong sending your request. Please call us at 780-951-0017 or email tcrremoval@gmail.com.');
     }
+  });
+
+  // ---- Google Ads conversion: "Click to call" ----
+  // Covers every tel: link — header, hero, form footer, footer, sticky mobile bar.
+  // Navigation is held until the beacon fires (or 800ms passes) because leaving
+  // the page immediately can kill the request before it's sent.
+  document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+    link.addEventListener('click', e => {
+      if (typeof gtag !== 'function') return; // let the call through untracked
+
+      const dest = link.getAttribute('href');
+      let moved = false;
+      const go = () => {
+        if (moved) return;
+        moved = true;
+        window.location = dest;
+      };
+
+      e.preventDefault();
+      setTimeout(go, 800); // fallback so a blocked beacon never blocks the call
+      gtag('event', 'conversion', {
+        send_to: 'AW-18343534670/7vpCCIqAkN4cEM7A8KpE',
+        value: 1.0,
+        currency: 'CAD',
+        event_callback: go
+      });
+    });
   });
 
   // ---- Smooth scroll for in-page anchors ----
