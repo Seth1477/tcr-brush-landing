@@ -27,6 +27,10 @@ module.exports = async (req, res) => {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
+  const gclid = esc(body.gclid);
+  const clickType = esc(body.clickType) || 'gclid';
+  const clickAge = esc(body.clickAge);
+
   const name = esc(body.name);
   const phone = esc(body.phone);
   const property = esc(body.property);
@@ -87,7 +91,18 @@ module.exports = async (req, res) => {
               <td style="padding:10px 0;white-space:pre-wrap;">${message}</td>
             </tr>` : ''}
           </table>
-          <div style="margin-top:28px;padding:16px 20px;background:#f0f0f0;font-size:13px;color:#6b7280;">
+          ${gclid ? `
+          <div style="margin-top:28px;padding:16px 20px;background:#eef5ec;border-left:4px solid #4a8c40;">
+            <div style="font-size:13px;font-weight:700;color:#2e5c28;margin-bottom:6px;">CAME FROM A GOOGLE AD${clickAge ? ` &middot; clicked ${clickAge}` : ''}</div>
+            <div style="font-size:12px;color:#6b7280;margin-bottom:4px;">${clickType} (keep this to report the job value back to Google)</div>
+            <code style="font-size:12px;color:#1c1c1c;word-break:break-all;">${gclid}</code>
+          </div>` : `
+          <div style="margin-top:28px;padding:16px 20px;background:#f5f0e8;border-left:4px solid #b8860b;">
+            <div style="font-size:13px;font-weight:700;color:#8a6508;">NOT FROM A GOOGLE AD</div>
+            <div style="font-size:12px;color:#6b7280;margin-top:4px;">Direct visit, organic search, or a shared link.</div>
+          </div>`}
+
+          <div style="margin-top:16px;padding:16px 20px;background:#f0f0f0;font-size:13px;color:#6b7280;">
             Submitted from TCR Brush Removal landing page
           </div>
         </div>

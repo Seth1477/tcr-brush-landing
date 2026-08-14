@@ -751,6 +751,12 @@
             <textarea id="message" name="message" placeholder="Rough size of the area, type of growth, anything else useful…"></textarea>
           </div>
 
+          <!-- Ad attribution. Never rendered, never focusable — the visitor
+               has no idea these exist. Populated on load from the URL. -->
+          <input type="hidden" id="gclid" name="gclid">
+          <input type="hidden" id="clickType" name="clickType">
+          <input type="hidden" id="clickAge" name="clickAge">
+
           <!-- honeypot -->
           <div class="hp-field" aria-hidden="true">
             <label for="company">Company</label>
@@ -1016,6 +1022,42 @@
 </div>
 
 <script>
+  // ---- Google Ads click attribution ----
+  // Auto-tagging appends ?gclid= to ad clicks (wbraid/gbraid on some iOS
+  // traffic). Stash it so it survives the visitor scrolling and reading before
+  // they submit, then ride along on the form post. Google only honours a click
+  // ID for 90 days, so anything older is dropped rather than mis-attributed.
+  (function captureClickId() {
+    const KEY = 'tcr_click_id';
+    const MAX_AGE_DAYS = 90;
+    const params = new URLSearchParams(location.search);
+
+    for (const type of ['gclid', 'wbraid', 'gbraid']) {
+      const value = params.get(type);
+      if (value) {
+        try {
+          localStorage.setItem(KEY, JSON.stringify({ type, value, at: Date.now() }));
+        } catch { /* private mode — fall through to the in-page value below */ }
+        break;
+      }
+    }
+
+    let record = null;
+    try { record = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch {}
+    if (!record || !record.value) return;
+
+    const ageDays = (Date.now() - record.at) / 86400000;
+    if (ageDays > MAX_AGE_DAYS) {
+      try { localStorage.removeItem(KEY); } catch {}
+      return;
+    }
+
+    const set = (id, val) => { const el = document.getElementById(id); if (el) el.value = val; };
+    set('gclid', record.value);
+    set('clickType', record.type);
+    set('clickAge', ageDays < 1 ? 'this visit' : Math.round(ageDays) + ' days ago');
+  })();
+
   // ---- FAQ accordion ----
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
