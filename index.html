@@ -310,6 +310,11 @@
 
     .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
 
+    /* Phone + email sit side by side so adding email costs no vertical space
+       and the form still fits above the fold. */
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 420px) { .form-row { grid-template-columns: 1fr; gap: 0; } }
+
     .form-group label {
       font-size: 13px;
       font-weight: 700;
@@ -732,9 +737,19 @@
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" autocomplete="name" placeholder="John Smith" required>
           </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="780-000-0000" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="john@email.com" required>
+            </div>
+          </div>
           <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="780-000-0000" required>
+            <label for="city">City / Area <span class="opt">(optional)</span></label>
+            <input type="text" id="city" name="city" autocomplete="address-level2" placeholder="e.g. Sherwood Park, St. Albert…">
           </div>
           <div class="form-group">
             <label for="property">Property Type <span class="opt">(optional)</span></label>
@@ -1088,8 +1103,15 @@
 
     const name = form.name.value.trim();
     const phone = form.phone.value.trim();
-    if (!name || !phone) {
-      alert('Please enter your name and phone number so we can get back to you.');
+    const email = form.email.value.trim();
+
+    if (!name || !phone || !email) {
+      alert('Please enter your name, phone number, and email so we can get back to you.');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      alert('That email address doesn\'t look right — please check it.');
+      form.email.focus();
       return;
     }
 

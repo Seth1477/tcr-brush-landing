@@ -34,6 +34,7 @@ module.exports = async (req, res) => {
   const name = esc(body.name);
   const phone = esc(body.phone);
   const property = esc(body.property);
+  const city = esc(body.city);
   const message = esc(body.message);
   const email = esc(body.email);
 
@@ -81,6 +82,10 @@ module.exports = async (req, res) => {
             ${email ? `<tr>
               <td style="padding:10px 0;border-bottom:1px solid #eee;color:#6b7280;font-size:14px;">Email</td>
               <td style="padding:10px 0;border-bottom:1px solid #eee;"><a href="mailto:${email}" style="color:#2e5c28;">${email}</a></td>
+            </tr>` : ''}
+            ${city ? `<tr>
+              <td style="padding:10px 0;border-bottom:1px solid #eee;color:#6b7280;font-size:14px;">City / Area</td>
+              <td style="padding:10px 0;border-bottom:1px solid #eee;">${city}</td>
             </tr>` : ''}
             ${property ? `<tr>
               <td style="padding:10px 0;border-bottom:1px solid #eee;color:#6b7280;font-size:14px;">Property Type</td>
