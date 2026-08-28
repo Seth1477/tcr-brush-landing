@@ -72,6 +72,7 @@ module.exports = async (req, res) => {
     `Email: ${field(body.email)}`,
     `City: ${field(body.city)}`,
     `Property: ${field(body.property)}`,
+    `Service: ${field(body.service)}`,
     `Source: ${body.gclid ? 'Google Ads' : 'Direct or organic'}`,
     `ClickType: ${field(body.clickType)}`,
     `ClickId: ${field(body.gclid)}`,
