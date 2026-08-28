@@ -50,6 +50,29 @@ module.exports = async (req, res) => {
   const subjectLine =
     `New Brush Removal Quote — ${oneLine(body.name)} | ${oneLine(body.property) || 'Not specified'}`;
 
+  // Plain-text twin of the email below, for Zapier's Email Parser. Uses the raw
+  // values, not the HTML-escaped ones — an escaped &amp; would land in Jobber.
+  // Every field is always present, in a fixed order, as one "Label: value" line:
+  // a parser template learns positions, so a row that disappears when it's empty
+  // silently breaks every field under it.
+  const field = (v) => oneLine(v) || 'none';
+  const textBody = [
+    'NEW QUOTE REQUEST',
+    '',
+    `Name: ${field(body.name)}`,
+    `Phone: ${field(body.phone)}`,
+    `Email: ${field(body.email)}`,
+    `City: ${field(body.city)}`,
+    `Property: ${field(body.property)}`,
+    `Source: ${body.gclid ? 'Google Ads' : 'Direct or organic'}`,
+    `ClickType: ${field(body.clickType)}`,
+    `ClickId: ${field(body.gclid)}`,
+    `ClickAge: ${field(body.clickAge)}`,
+    `Message: ${field(body.message)}`,
+    '',
+    '=== END ===',
+  ].join('\n');
+
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -62,7 +85,11 @@ module.exports = async (req, res) => {
     from: `"TCR Landing Page" <${process.env.GMAIL_USER}>`,
     to: process.env.GMAIL_USER,
     replyTo,
+    // Optional: a Zapier Email Parser mailbox (parser.zapier.com). Unset is fine —
+    // nodemailer ignores an undefined bcc.
+    bcc: process.env.PARSER_EMAIL || undefined,
     subject: subjectLine,
+    text: textBody,
     html: `
       <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;">
         <div style="background:#1a3d18;padding:24px 32px;">
