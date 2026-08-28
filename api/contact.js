@@ -44,11 +44,13 @@ module.exports = async (req, res) => {
     ? String(body.email).trim()
     : process.env.GMAIL_USER;
 
-  // Subject uses the raw values (not HTML-escaped) with newlines stripped so a
-  // submitted value can't inject extra mail headers.
+  // Values are collapsed onto one line before they reach the email, so a submitted
+  // value can't inject mail headers or break the "Label: value" shape below.
   const oneLine = (v) => String(v == null ? '' : v).replace(/[\r\n]+/g, ' ').trim();
-  const subjectLine =
-    `New Brush Removal Quote — ${oneLine(body.name)} | ${oneLine(body.property) || 'Not specified'}`;
+
+  // Fixed subject: every lead off this landing page is then reachable with one
+  // exact-match Gmail/Zapier search. The name and property moved into the body.
+  const subjectLine = 'New Quote Request - Google Ads';
 
   // Plain-text twin of the email below, for Zapier's Email Parser. Uses the raw
   // values, not the HTML-escaped ones — an escaped &amp; would land in Jobber.
