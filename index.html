@@ -14,6 +14,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'AW-18343534670');
+    gtag('config', 'G-VYBHZX9HSG');
   </script>
 
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -1139,6 +1140,8 @@
           value: 1.0,
           currency: 'CAD'
         });
+        // Google Analytics 4 lead event (mark as a key event in GA4).
+        gtag('event', 'generate_lead', { form_name: 'brush_landing' });
       }
     } catch {
       submitBtn.textContent = 'Get My Free Quote';
@@ -1165,6 +1168,7 @@
 
       e.preventDefault();
       setTimeout(go, 800); // fallback so a blocked beacon never blocks the call
+      gtag('event', 'phone_click', { cta: link.dataset.cta || 'tel-link' });
       gtag('event', 'conversion', {
         send_to: 'AW-18343534670/7vpCCIqAkN4cEM7A8KpE',
         value: 1.0,
